@@ -1,0 +1,5 @@
+%header
+  %h4= post.title
+  .byline By #{post.user.name}
+  .time #{post.updated_at.strftime('%A %B, %e %I:%M %p')}
+%p= post.content.truncate(200)
