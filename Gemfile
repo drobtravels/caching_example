@@ -29,6 +29,8 @@ gem 'faker'
 
 gem 'newrelic_rpm'
 
+gem 'readthis'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

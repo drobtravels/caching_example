@@ -53,6 +53,7 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
+    connection_pool (2.2.0)
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.5.2)
@@ -62,6 +63,7 @@ GEM
       activesupport (>= 4.1.0)
     haml (4.0.6)
       tilt
+    hiredis (0.6.0)
     i18n (0.7.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
@@ -112,6 +114,11 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    readthis (0.6.2)
+      connection_pool (~> 2.1)
+      hiredis (~> 0.5)
+      redis (~> 3.0)
+    redis (3.2.1)
     sass (3.4.16)
     sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -159,6 +166,7 @@ DEPENDENCIES
   newrelic_rpm
   pg
   rails (= 4.2.3)
+  readthis
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
