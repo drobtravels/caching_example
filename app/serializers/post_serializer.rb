@@ -1,6 +1,14 @@
-class Post < ActiveRecord::Base
-  belongs_to :user
-  scope :visible, -> { where(visible: true) }
+class PostSerializer < ActiveModel::Serializer
+  TYPE = 'post'
+  attributes :title, :content, :created_at, :user_name, :type
+
+  def user_name
+    object.user.try(:name)
+  end
+
+  def type
+    TYPE
+  end
 end
 
 # == Schema Information

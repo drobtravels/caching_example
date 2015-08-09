@@ -31,6 +31,8 @@ gem 'newrelic_rpm'
 
 gem 'readthis'
 
+gem 'active_model_serializers', '~> 0.8.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
