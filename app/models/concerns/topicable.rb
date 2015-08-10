@@ -2,6 +2,7 @@ module Topicable
   extend ActiveSupport::Concern
 
   included do
-    belongs_to :topic
+    # touch updates topic allowing for russian doll caching
+    belongs_to :topic, touch: true
   end
 end

@@ -1,3 +1,4 @@
-%h4= product.name
-%h5 Yours for only #{number_to_currency(product.price)}
-%p= product.description
+- cache product do
+  %h4= product.name
+  %h5 Yours for only #{number_to_currency(product.price)}
+  %p= product.description

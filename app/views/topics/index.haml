@@ -1,9 +1,10 @@
 %h1 All Topics
 
 - @topics.each do |topic|
-  %h2
-    = link_to topic.name, topic_path(topic)
-  Products: #{topic.products.for_sale.count} | Posts: #{topic.posts.visible.count}
+  - cache @topic do
+    %h2
+      = link_to topic.name, topic_path(topic)
+    Products: #{topic.products.for_sale.count} | Posts: #{topic.posts.visible.count}
 
-  %h5 Most recent post:
-  = render partial: 'posts/summary', locals: { post: topic.posts.visible.order(created_at: :desc).first }
+    %h5 Most recent post:
+    = render partial: 'posts/summary', locals: { post: topic.posts.visible.order(created_at: :desc).first }

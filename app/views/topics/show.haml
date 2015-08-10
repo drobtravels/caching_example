@@ -1,7 +1,8 @@
-%h1= @topic.name
+- cache @topic do
+  %h1= @topic.name
 
-%h2 Posts
-= render partial: 'posts/summary', collection: @topic.posts.visible, as: :post
+  %h2 Posts
+  = render partial: 'posts/cached_summary', collection: @topic.posts.visible, as: :post
 
-%h2 Related Products to Purchase
-= render partial: 'products/product', collection: @topic.products.for_sale, as: :product
+  %h2 Related Products to Purchase
+  = render partial: 'products/product', collection: @topic.products.for_sale, as: :product

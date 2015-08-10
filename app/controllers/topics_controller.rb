@@ -1,7 +1,11 @@
 class TopicsController < ApplicationController
 
   def index
-    @topics = topics_with_associations.all
+    cache_key = "topic_index/#{Topic.maximum(:updated_at)}"
+    @topics = Rails.cache.fetch(cache_key) do 
+      Rails.logger.info "Querying for topics"
+      topics_with_associations.all
+    end
   end
 
   def show
@@ -11,6 +15,6 @@ class TopicsController < ApplicationController
   protected
 
   def topics_with_associations
-    Topic.includes(:posts, :products)
+    Topic.includes(:products, posts: :comments)
   end
 end
