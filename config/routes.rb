@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :topics, only: [:index, :show]
+
   get 'api/products_and_posts_by_date'
 end

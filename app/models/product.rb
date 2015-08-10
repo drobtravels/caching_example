@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
   include DisplayOnMainPage
+  include Topicable
+  
   scope :for_sale, -> { where(sellable: true) }
 end
 

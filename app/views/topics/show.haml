@@ -1,0 +1,7 @@
+%h1= @topic.name
+
+%h2 Posts
+= render partial: 'posts/summary', collection: @topic.posts.visible, as: :post
+
+%h2 Related Products to Purchase
+= render partial: 'products/product', collection: @topic.products.for_sale, as: :product
