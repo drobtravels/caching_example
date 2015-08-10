@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 
   # NOTE:  Table should be insert/update only (No deletes!)
   def update_time_based_cache
-    cache_key = Post.maximum(:updated_at).to_s
+    cache_key = "posts/#{Post.maximum(:updated_at)}"
     @posts = Rails.cache.fetch(cache_key) do
       posts_query
     end
@@ -33,6 +33,6 @@ class PostsController < ApplicationController
 
   def posts_query
     Rails.logger.info 'executing query for posts'
-    Post.visible.includes(:user)
+    Post.visible.includes(:user, :comments)
   end
 end
