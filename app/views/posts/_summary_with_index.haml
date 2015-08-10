@@ -1,0 +1,4 @@
+- cache post do
+  = render partial: 'posts/summary', locals: { post: post }
+  %h5 Comments: #{post.comments.count}
+  

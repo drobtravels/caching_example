@@ -33,6 +33,6 @@ class PostsController < ApplicationController
 
   def posts_query
     Rails.logger.info 'executing query for posts'
-    Post.visible.includes(:user, :comments)
+    Post.visible.includes(:user)
   end
 end

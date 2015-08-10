@@ -2,7 +2,7 @@
   %h1= @topic.name
 
   %h2 Posts
-  = render partial: 'posts/cached_summary', collection: @topic.posts.visible, as: :post
+  = render partial: 'posts/summary_with_index', collection: @topic.posts.visible, as: :post
 
   %h2 Related Products to Purchase
   = render partial: 'products/product', collection: @topic.products.for_sale, as: :product
