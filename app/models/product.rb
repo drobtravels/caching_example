@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  include DisplayOnMainPage
   scope :for_sale, -> { where(sellable: true) }
 end
 

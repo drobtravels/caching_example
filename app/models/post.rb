@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  include DisplayOnMainPage
   belongs_to :user
   scope :visible, -> { where(visible: true) }
 end
