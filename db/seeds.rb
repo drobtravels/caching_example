@@ -11,12 +11,14 @@ topics = %W(Technology Eats Exercise).map { |topic_name| Topic.find_or_create_by
 users = 3.times.map { User.create(name: Faker::Name.name, email: Faker::Internet.email) }
 
 10.times do
-  Post.create(
+  post = Post.create(
     user: users.sample,
     title: generate_title,
     content: Faker::Lorem.paragraphs(5, true).join("\u2028"),
     created_at: Faker::Date.backward(14),
     topic: topics.sample)
+
+  rand(6).times { post.comments.create(comment: Faker::Lorem.sentence) }
 end
 
 10.times do

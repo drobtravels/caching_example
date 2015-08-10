@@ -3,3 +3,4 @@
   .byline By #{post.user.name}
   .time #{post.updated_at.strftime('%A %B, %e %I:%M %p')}
 %p= post.content.truncate(200)
+%h5 Comments: #{post.comments.count}
