@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
 
-  def main_page
+  def all
   end
 end
