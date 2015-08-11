@@ -2,7 +2,7 @@
   %h1 All Topics
 
   - @topics.each do |topic|
-    - cache @topic do
+    - cache topic do
       %h2
         = link_to topic.name, topic_path(topic)
       Products: #{topic.products.for_sale.count} | Posts: #{topic.posts.visible.count}

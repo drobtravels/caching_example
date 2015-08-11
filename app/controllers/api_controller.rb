@@ -2,7 +2,7 @@ class ApiController < ApplicationController
   layout false
 
   def products
-    cache_key = "products/#{Product.maximum(:created_at)}"
+    cache_key = "products/#{Product.maximum(:updated_at)}"
     products = Rails.cache.fetch(cache_key) do
       Rails.logger.info 'querying for products and building json'
       Product.for_sale.to_json
