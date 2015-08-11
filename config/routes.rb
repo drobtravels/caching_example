@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   resources :topics, only: [:index, :show]
 
-  get 'api/products_and_posts_by_date'
+  get 'api/products_and_posts_by_date', format: 'json'
+  get 'api/products', fromat: 'json'
 end
