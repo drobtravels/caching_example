@@ -28,7 +28,7 @@ Rails.application.configure do
   config.assets.debug = false
 
   config.cache_store = :readthis_store, 'redis://localhost:6379', {
-    expires_in: 1.day.to_i
+    expires_in: 10.minutes.to_i
   }
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
