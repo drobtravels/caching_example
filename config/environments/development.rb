@@ -25,7 +25,7 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
+  config.assets.debug = false
 
   config.cache_store = :readthis_store, 'redis://localhost:6379', {
     expires_in: 1.day.to_i
