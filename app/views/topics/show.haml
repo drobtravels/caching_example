@@ -1,8 +1,10 @@
 - cache @topic do
   %h1= @topic.name
 
-  %h2 Posts
-  = render partial: 'posts/summary_with_index', collection: @topic.posts.visible, as: :post
+  - cache posts_cache_key do
+    %h2 Posts
+    = render partial: 'posts/summary_with_index', collection: @topic.posts.visible, as: :post
 
-  %h2 Related Products to Purchase
-  = render partial: 'products/product', collection: @topic.products.for_sale, as: :product
+  - cache products_cache_key do
+    %h2 Related Products to Purchase
+    = render partial: 'products/product', collection: @topic.products.for_sale, as: :product
