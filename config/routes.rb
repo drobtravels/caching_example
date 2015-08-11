@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  resources :posts, only: [:index] do
+  resources :posts, only: [] do
     collection do
       get 'simple_cached_index'
-      get 'time_based_cache'
-      get 'update_time_based_cache'
+      get 'time_based_cache_index'
+      get 'update_time_based_cache_index'
     end
   end
 

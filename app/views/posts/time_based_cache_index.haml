@@ -1,0 +1,4 @@
+- cache 'time-based-posts-index', expires_in: 10.minutes do
+  %h2 Posts Index
+
+  = render partial: 'summary', collection: @posts, as: :post
